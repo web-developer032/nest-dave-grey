@@ -39,7 +39,7 @@ export class EmployeeController {
   @SkipThrottle({ default: false }) // DON'T SKIP THROTTLING FOR ALL REQUESTS
   @Get()
   findAll(@Ip() ip: string, @Query("role") role?: USER_ROLE) {
-    this.logger.log(`GET ALL EMPLOYEES \t ${ip}`);
+    this.logger.log(`GET ALL EMPLOYEES \t ${ip}`, EmployeeController.name);
     return this.employeeService.findAll(role);
   }
 
