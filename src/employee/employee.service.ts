@@ -21,11 +21,7 @@ export class EmployeeService {
         },
       });
 
-    return this.databaseService.employee.findMany({
-      where: {
-        role,
-      },
-    });
+    return this.databaseService.employee.findMany();
   }
 
   async findOne(id: number) {
